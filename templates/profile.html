@@ -1,0 +1,24 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container-fluid d-flex justify-content-center">
+  <div class="row justify-content-center width-100">
+    <div class="col-md-12 text-center">
+      <div class="card mx-auto" style="width: 30rem; margin-top: 2rem">
+        <a href="/" class="btn btn-secondary margin-bottom-10">Voltar</a>
+        <img
+          src="{{profile.image}}"
+          class="card-img-top img-rounded padding-10"
+          alt="{{profile.name}}"
+        />
+        <div class="card-body">
+          <h3 class="card-title">{{profile.name}}</h3>
+          <p class="lead">Espécie: {{profile.species}}</p>
+          <p class="lead">Gênero: {{profile.gender}}</p>
+          <a href="/profile/{{profile.id}}" class="btn btn-dark width-100 margin-bottom-10">Origem</a> <!-- Fazer a lógica --> 
+          <a href="/profile/{{profile.id}}" class="btn btn-dark width-100 margin-bottom-10">Localização atual</a> <!-- Fazer a lógica --> 
+          <p class="lead">Episodios: {{profile.episodes}}</p>  <!-- isto vai ser um accordion --> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container-fluid">
+  <div class="row">
+    {% for character in characters %}
+    <div class="col-md-3 col-6 text-center">
+    <a class = "a-card" href="/profile/{{character.id}}">
+      <div class="card card-shadow" style="width: 18rem; margin: 2rem">
+        <img
+          src="{{character.image}}"
+          class="card-img-top img-rounded padding-10"
+          alt="{{character.name}}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{character.name}}</h5>
+          <a href="/profile/{{character.id}}" class="btn btn-info"
+            >Ver perfil</a  
+          >
+        </div>
+      </div>
+    </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
