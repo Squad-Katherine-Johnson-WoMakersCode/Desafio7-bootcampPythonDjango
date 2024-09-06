@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1>Episódios</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Data de lançamento</th>
+                    <th>Código do episódio</th>
+                    <th>Perfil do episódio</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for episode in episodes %}
+                    <tr>
+                        <td>{{ episode['name'] }}</td>
+                        <td>{{ episode['air_date'] }}</td>
+                        <td>{{ episode['episode'] }}</td>
+                        <td><a href="{{ url_for('episode_profile', episode_id=episode['id']) }}">Perfil do episódio</a></td>
+                    </tr>
+        {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

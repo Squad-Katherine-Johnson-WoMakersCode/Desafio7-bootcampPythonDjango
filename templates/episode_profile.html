@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="display-4">{{ episode['name'] }}</h1>
+    <p><strong>Data de lançamento:</strong> {{ episode['air_date'] }}</p>
+    <p><strong>Código do episódio:</strong> {{ episode['episode'] }}</p>
+    <p><strong>Personagens no episódio:</strong></p>
+    <ul class="list-group">
+        {% for character_url in episode['characters'] %}
+            {% set character_id = character_url.split('/')[-1] %}
+            <li class="list-group-item">
+                <a href="{{ url_for('get_profile', id=character_id) }}" class="text-decoration-none">
+                    Personagens {{ character_id }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
+
