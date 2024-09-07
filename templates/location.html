@@ -1,0 +1,39 @@
+{% extends "layout.html" %} {% block content %}
+
+<div class="container text-center margin-top-bottom-10">
+  <div class="row">
+    <a href="/locations" class="btn btn-secondary width-100 margin-top-bottom-10">Voltar</a>
+    <div class="column-custom">
+      <h1>Localização</h1>
+    </div>
+    <div class="col-md-4 column-custom">
+      <h2 class="title">{{location.name}}</h2>
+    </div>
+    <div class="col-md-4 column-custom">
+      <h2 class="title">{{location.type}}</h2>
+    </div>
+    <div class="col-md-4 column-custom">
+      <h2 class="title">{{location.dimension}}</h2>
+    </div>
+  </div>
+  <div class="row column-custom">
+    <h1>Residentes</h1>
+    {% for resident in residents %}
+        {% if loop.index0 % 4 == 0 %}
+            </div>
+            <div class="row column-custom">
+        {% endif %}
+        <div class="col-md-3 text-center">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ resident.image }}" class="card-img-top" alt="{{ resident.name }}" />
+                <div class="card-body">
+                    <h5 class="card-title">{{ resident.name }}</h5>
+                    <a href="/profile/{{ resident.id }}" class="btn btn-info width-100">Ver perfil</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+  {% endblock content %}
+</div>

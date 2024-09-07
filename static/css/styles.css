@@ -50,3 +50,7 @@
   .card-shadow:hover{
     box-shadow: 0 5px 9px 0 rgba(0,0,0,0.2);
   }
+
+.accordion {
+    margin-top: 1rem; 
+}
