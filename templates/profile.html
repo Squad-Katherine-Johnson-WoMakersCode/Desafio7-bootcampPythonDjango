@@ -3,7 +3,6 @@
   <div class="row justify-content-center width-100">
     <div class="col-md-12 text-center">
       <div class="card mx-auto" style="width: 30rem; margin-top: 2rem">
-        <a href="/" class="btn btn-secondary margin-bottom-10">Voltar</a>
         <img
           src="{{profile.image}}"
           class="card-img-top img-rounded padding-10"
@@ -19,7 +18,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button
-                  class="accordion-button collapsed"
+                  class="accordion-button collapsed btn btn-light"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#flush-collapseOne"
@@ -32,15 +31,14 @@
               <div
                 id="flush-collapseOne"
                 class="accordion-collapse collapse"
-                data-bs-parent="#accordionFlushExample"
               >
                 <div class="accordion-body">
                   <ul class="list-unstyled">
                     {% for episode in episodes %}
                     <li>
-                      <a class="text-left" href="/episode/{{episode.id}}"
-                        >{{episode.name}}</a
-                      >
+                      <a class="text-left" href="{{ url_for('episode_profile', episode_id=episode['id']) }}">
+                        {{ episode['name'] }}
+                      </a>
                     </li>
                     {% endfor %}
                   </ul>

@@ -1,0 +1,31 @@
+{% extends "layout.html" %} {% block content %}
+  <div class="row">
+    <div class="col-12">
+      <h1>Localizações</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Tipo</th>
+            <th>Dimensão</th>
+            <th>Perfil da localização</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for location in locations %}
+          <tr>
+            <td>{{location.name}}</td>
+            <td>{{location.type}}</td>
+            <td>{{location.dimension}}</td>
+            <td>
+              <a href="/location/{{location.id}}">Perfil da localização</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  {% endblock content %}
+</div>
